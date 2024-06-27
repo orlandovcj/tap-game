@@ -2,8 +2,8 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 
 // Token do seu bot do Telegram
-const TOKEN = 'YOUR_BOT_TOKEN';
-const WEBHOOK_URL = 'YOUR_SERVER_URL/bot'; // URL pública do seu servidor
+const TOKEN = '6923034238:AAGAsXHireHX_X8ABHwwRhEZRY2f3PifR4o';
+const WEBHOOK_URL = 'https://orlandovcj.github.io/tap-game/bot'; // URL pública do seu servidor
 
 const bot = new TelegramBot(TOKEN);
 const app = express();
@@ -25,7 +25,7 @@ bot.onText(/\/start/, (msg) => {
             inline_keyboard: [
                 [{
                     text: 'Play Tap Game',
-                    web_app: { url: 'YOUR_WEB_APP_URL/index.html' }
+                    web_app: { url: 'https://orlandovcj.github.io/tap-game/index.html' }
                 }]
             ]
         }
