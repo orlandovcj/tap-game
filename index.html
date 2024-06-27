@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #tapButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #tapCount {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1>Tap Game</h1>
+    <button id="tapButton">Tap!</button>
+    <div id="tapCount">Toques: 0</div>
+
+    <script>
+        let tapCount = 0;
+
+        document.getElementById('tapButton').addEventListener('click', () => {
+            tapCount += 1;
+            document.getElementById('tapCount').innerText = `Toques: ${tapCount}`;
+            Telegram.WebApp.sendData(JSON.stringify({ tapCount }));
+        });
+
+        // Inicializa o Telegram Web App
+        Telegram.WebApp.ready();
+    </script>
+</body>
+</html>
