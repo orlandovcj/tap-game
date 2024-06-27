@@ -3,7 +3,7 @@ const express = require('express');
 
 // Token do seu bot do Telegram
 const TOKEN = '6923034238:AAGAsXHireHX_X8ABHwwRhEZRY2f3PifR4o';
-const WEBHOOK_URL = 'https://orlandovcj.github.io/tap-game/bot'; // URL pública do seu servidor
+const WEBHOOK_URL = 'http://127.0.0.1:4040/bot'; // URL pública do seu servidor
 
 const bot = new TelegramBot(TOKEN);
 const app = express();
